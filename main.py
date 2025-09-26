@@ -270,14 +270,13 @@ def send_gold(currencies):
 
     message = (
          f"<b>اسعار الذهب ليوم {day}</b>\n\n"
-         f"<b>ذهب 18 قيراط</b>\n"
-         f"<blockquote>{k18[0]}</blockquote>\n\n"
+         f"<b>ذهب 18 قيراط</b>\n\n"
+         f"<blockquote>{k18} SYP</blockquote>\n\n"
          f"<b>ذهب 21 قيراط</b>\n"
-         f"<blockquote>{k21[0]}</blockquote>\n\n"
+         f"<blockquote>{k21} SYP</blockquote>\n\n"
          f"<b>ذهب 24 قيراط</b>\n"
-         f"<blockquote>{k24[0]}</blockquote>\n\n"
+         f"<blockquote>{k24} SYP</blockquote>\n\n"
          f"<blockquote>{day} - {date_str}  </blockquote>\n\n"
-         f"https://t.me/{CHANNEL_name}")
 
     with open("Gold.jpeg", "rb") as photo:
         bot.send_photo(f"@{CHANNEL_name}", photo, caption=message)
