@@ -19,7 +19,7 @@ DATABASE_URL = os.environ.get("DATABASE_URL")
 Token = os.getenv("TOKEN")
 bot_name = os.getenv("bot_name")
 CHANNEL_name = os.getenv("CHANNEL_name")
-Admin_Id = os.getenv("Admin")
+Admin_Id = int(os.getenv("Admin"))
 URL = os.getenv("URL")
 
 
@@ -293,7 +293,7 @@ def main_pag():
             logging.error("خطأ في فحص الموقع")
             Send_to_Admin("خطأ في فحص الموقع")
 
-    return "test", 200
+    return "test2", 200
 
 
 @app.route(f"/{Token}", methods=["POST"])
@@ -306,7 +306,7 @@ def webhook():
 
             if update.message:
                 bot.send_message(update.message.from_user.id, update.message.from_user.id)
-                testwork()
+                #testwork()
                 if update.message.from_user.id == Admin_Id:
                     Send_to_Admin("Hello2")
                     
