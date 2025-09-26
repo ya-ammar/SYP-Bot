@@ -293,7 +293,7 @@ def main_pag():
             logging.error("خطأ في فحص الموقع")
             Send_to_Admin("خطأ في فحص الموقع")
 
-    return "ok", 200
+    return "test", 200
 
 
 @app.route(f"/{Token}", methods=["POST"])
@@ -305,9 +305,9 @@ def webhook():
             update = telebot.types.Update.de_json(json_str)
 
             if update.message:
-                Send_to_Admin("Hello")
+                bot.send_message(update.message.from_user.id, "hello1")
                 if update.message.from_user.id == Admin_Id:
-                    Send_to_Admin("Hello")
+                    Send_to_Admin("Hello2")
                     #testwork()
                 
     except:
