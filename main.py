@@ -182,10 +182,12 @@ def Go_Work():
         Send_to_Admin("خطأ في فحص الموقع")
 
 def testwork():
-    currencies = fetch_gold_prices()
+    soup = Get_Soup()
+    currencies = fetch_gold_prices(soup)
     send_gold(currencies)
-    currencies = fetch_currencies()
+    currencies = fetch_currencies(soup)
     send_all(currencies , False)
+    send_all(currencies , True)
     send_dollar(currencies)
 
 
