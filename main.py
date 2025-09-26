@@ -183,10 +183,10 @@ def Go_Work():
 
 def testwork():
     soup = Get_Soup()
-    #currenciesgold = fetch_gold_prices(soup)
-    #send_gold(currenciesgold)
-    currencies = fetch_currencies(soup)
-    send_all(currencies , False)
+    currenciesgold = fetch_gold_prices(soup)
+    send_gold(currenciesgold)
+    #currencies = fetch_currencies(soup)
+    #send_all(currencies , False)
     #send_all(currencies , True)
     #send_dollar(currencies)
 
