@@ -186,9 +186,9 @@ def testwork():
     #currenciesgold = fetch_gold_prices(soup)
     #send_gold(currenciesgold)
     currencies = fetch_currencies(soup)
-    #send_all(currencies , False)
+    send_all(currencies , False)
     #send_all(currencies , True)
-    send_dollar(currencies)
+    #send_dollar(currencies)
 
 
 def get_day(num):
@@ -256,7 +256,7 @@ def send_all(currencies , end):
          f"<blockquote>{day} - {date_str}  </blockquote>\n\n"
          f"https://t.me/{CHANNEL_name}")
 
-    with open("Gold.jpeg", "rb") as photo:
+    with open("Price.jpg", "rb") as photo:
         bot.send_photo(f"@{CHANNEL_name}", photo, caption=message)
 
 def send_gold(currencies):
@@ -279,7 +279,7 @@ def send_gold(currencies):
          f"<blockquote>{day} - {date_str}  </blockquote>\n\n"
          f"https://t.me/{CHANNEL_name}")
 
-    with open("Price.jpg", "rb") as photo:
+    with open("Gold.jpeg", "rb") as photo:
         bot.send_photo(f"@{CHANNEL_name}", photo, caption=message)
 
 # -------------------------------------------- منطق الويب
