@@ -306,7 +306,7 @@ def webhook():
 
             if update.message:
 
-                if update.message.from_user.id == "Admin":
+                if update.message.from_user.id == Admin_Id:
                     Send_to_Admin("Hello")
                     testwork()
                 
