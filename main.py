@@ -277,7 +277,7 @@ def send_gold(currencies):
          f"<blockquote>{k21} SYP</blockquote>\n\n"
          f"<b>ذهب 24 قيراط</b>\n"
          f"<blockquote>{k24} SYP</blockquote>\n\n"
-         f"<blockquote>{day} - {date_str}  </blockquote>\n\n"
+         f"<blockquote>{day} - {date_str}  </blockquote>\n\n")
 
     with open("Gold.jpeg", "rb") as photo:
         bot.send_photo(f"@{CHANNEL_name}", photo, caption=message)
