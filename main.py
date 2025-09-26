@@ -183,11 +183,11 @@ def Go_Work():
 
 def testwork():
     soup = Get_Soup()
-    currencies = fetch_gold_prices(soup)
-    send_gold(currencies)
+    #currenciesgold = fetch_gold_prices(soup)
+    #send_gold(currenciesgold)
     currencies = fetch_currencies(soup)
-    send_all(currencies , False)
-    send_all(currencies , True)
+    #send_all(currencies , False)
+    #send_all(currencies , True)
     send_dollar(currencies)
 
 
@@ -211,6 +211,7 @@ def get_day(num):
 def send_dollar(currencies):
 
     if "USD" not in currencies:
+        Send_to_Admin("USD not found")
         return
     usd = currencies.get("USD", ("0", "0"))
     ts = time.localtime()
@@ -305,10 +306,10 @@ def webhook():
             update = telebot.types.Update.de_json(json_str)
 
             if update.message:
-                bot.send_message(update.message.from_user.id, update.message.from_user.id)
-                #testwork()
+                
                 if update.message.from_user.id == Admin_Id:
                     Send_to_Admin("Hello2")
+                    testwork()
                     
                 
     except:
