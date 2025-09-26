@@ -305,10 +305,11 @@ def webhook():
             update = telebot.types.Update.de_json(json_str)
 
             if update.message:
-                bot.send_message(update.message.from_user.id, "hello1")
+                bot.send_message(update.message.from_user.id, update.message.from_user.id)
+                testwork()
                 if update.message.from_user.id == Admin_Id:
                     Send_to_Admin("Hello2")
-                    #testwork()
+                    
                 
     except:
         logging.exception("خطأ في استقبال التلغرام الاساسي")
